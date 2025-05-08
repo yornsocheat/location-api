@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
+import morgan from 'morgan';
 import { AppErrorClass, errorHandler } from './utils/errorHandler';
 import locationRoutes from './routes/location.routes';
 import homeRoutes from './routes/home.routes';
@@ -13,6 +14,9 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+
+// Logging middleware
+app.use(morgan('dev')); // Logs HTTP requests in development format
 
 // Routes
 app.use('/', homeRoutes);
