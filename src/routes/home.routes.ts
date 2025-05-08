@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 router.get('/health', (_, res) => {
   res.json({
-    status: 'OK',
+    status: 'healthy',
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
   });
