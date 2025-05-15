@@ -2,9 +2,8 @@ import express, { Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import { AppErrorClass, errorHandler } from './utils/errorHandler';
-import locationRoutes from './routes/location.routes';
 import homeRoutes from './routes/home.routes';
-import userRoutes from './routes/user.routes';
+import v1Routes from './routes/v1';
 
 // Load environment variables
 dotenv.config();
@@ -20,8 +19,7 @@ app.use(morgan('dev')); // Logs HTTP requests in development format
 
 // Routes
 app.use('/', homeRoutes);
-app.use('/api/locations', locationRoutes);
-app.use('/api/users', userRoutes);
+app.use('/v1', v1Routes);
 
 // 404 handler
 app.use((req: Request, res: Response, next: NextFunction) => {
