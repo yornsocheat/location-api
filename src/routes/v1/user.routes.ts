@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { validate } from '../middleware/validate';
-import { createUserSchema, getUserSchema, deleteUserSchema } from '../schemas/users.schema';
+import { validate } from '../../middleware/validate';
+import { createUserSchema, getUserSchema, deleteUserSchema } from '../../schemas/users.schema';
 
 const router = Router();
 

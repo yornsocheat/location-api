@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { catchAsync } from '../utils/errorHandler';
-import { AppErrorClass } from '../utils/errorHandler';
+import { catchAsync } from '../../utils/errorHandler';
+import { AppErrorClass } from '../../utils/errorHandler';
 
 const router = Router();
 
